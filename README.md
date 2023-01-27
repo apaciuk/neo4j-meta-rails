@@ -1,5 +1,7 @@
 # neo4j-meta-rails
 
+Basic setup playground for a Neo4J Graph DB with Ruby on Rails, example asset model, RSpec, UUIds, Devise, Users, Accounts, Roles (ActiveRecord)
+
 Requires local install Neo4J Graph DB (Ubuntu here) [https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-neo4j-on-ubuntu-20-04]
 $ cypher-shell user neo4j pw neo4j (change) add nodes & relations. Optional Neo4J Desktop [https://neo4j.com/download-center/#desktop]
 

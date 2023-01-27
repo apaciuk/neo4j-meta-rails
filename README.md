@@ -1,12 +1,11 @@
-# jumpstart-custom
+# neo4j-meta-rails
 
-## Getting Started
-
-Jumpstart Custom is a Rails template, so you pass it in as an option when creating a new app.
+Requires local install Neo4J Graph DB (Ubuntu here) [https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-neo4j-on-ubuntu-20-04]
+$ cypher-shell user neo4j pw neo4j (change) add nodes & relations. Optional Neo4J Desktop [https://neo4j.com/download-center/#desktop]
 
 #### Requirements
 
-You'll need the following installed to run the template successfully:
+You'll also need the following installed to run the app successfully:
 
 - Ruby 2.5 or higher
 - bundler - `gem install bundler`
@@ -44,7 +43,7 @@ end
 
 - create table expression: insert after the table name: ", id: :uuid" # minus quotes, sets Primary key uuid
 - foreign_key expression: append: ", type: :uuid" # minus quotes, sets Foreign key uuid
-- In ApplicationRecord insert - self.implicit_order_column = 'created_at'  under primary_abstract_class line
+- In ApplicationRecord insert - self.implicit_order_column = 'created_at' under primary_abstract_class line
 
 $ rails db:migrate:reset
 
@@ -95,8 +94,8 @@ After migration field/column added,
 Can be adjusted in application_controler, example below add a github_link
 
 def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :avatar, :github_link])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
+devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :avatar, :github_link])
+devise_parameter_sanitizer.permit(:account_update, keys: [:name, :avatar])
 end
 
 and add to the create method in onmniauth_controller
@@ -176,7 +175,7 @@ brew services start redis
 
 ##### Ubuntu
 
-```
+````
 sudo apt-get install redis-server
 
 
@@ -187,4 +186,4 @@ rails db:drop
 spring stop
 cd ..
 rm -rf myapp
-```
+````

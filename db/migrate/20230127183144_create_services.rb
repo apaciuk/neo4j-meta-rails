@@ -1,7 +1,7 @@
 class CreateServices < ActiveRecord::Migration[7.0]
   def change
-    create_table :services do |t|
-      t.references :user, null: false, foreign_key: true
+    create_table :services, id: :uuid do |t|
+      t.references :user, null: false, foreign_key: true, type: :uuid
       t.string :provider
       t.string :uid
       t.string :access_token
